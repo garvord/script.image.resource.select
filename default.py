@@ -114,11 +114,12 @@ class Gui(xbmcgui.WindowXMLDialog):
                 subfolders = item.getProperty('subfolders')
                 xbmc.executebuiltin('Skin.SetString(%s,%s)' % ((self.property + '.name'), name))
                 xbmc.executebuiltin('Skin.SetString(%s,%s)' % ((self.property + '.path'), 'resource://%s/' % addonid))
-                xbmc.executebuiltin('Skin.SetString(%s,%s)' % ((self.property + '.ext'), extension))
                 if subfolders == 'true':
                     xbmc.executebuiltin('Skin.SetBool(%s)' % (self.property + '.multi'))
+                    xbmc.executebuiltin('Skin.Reset(%s)' % (self.property + '.ext'))
                 else:
                     xbmc.executebuiltin('Skin.Reset(%s)' % (self.property + '.multi'))
+                    xbmc.executebuiltin('Skin.SetString(%s,%s)' % ((self.property + '.ext'), extension))
             xbmc.sleep(100)
             self.close()
         elif controlID == 5:

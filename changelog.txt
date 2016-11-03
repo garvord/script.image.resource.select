@@ -1,3 +1,9 @@
+v1.1.2
+- fix python dependency
+
+v1.1.1
+- don't set extention if we have subfolders
+
 v0.1.1
 - display addon summary
 - fix broken window history when clickin "get more"
